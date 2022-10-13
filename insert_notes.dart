@@ -1,6 +1,7 @@
 import 'average_notes.dart';
+import 'is_aproved.dart';
 
-class insertNotes extends AverageNotes {
+class insertNotes extends AverageNotes with Approved {
   List<double> _notes = [];
 
   void registerNote({double note = 0}) {
@@ -10,15 +11,6 @@ class insertNotes extends AverageNotes {
     } else {
       setNote(note);
       print("Nota inserida no sistema.");
-    }
-  }
-
-  isApproved() {
-    double average = calcAverage(notes: _notes);
-    if (average >= 7) {
-      print("Você foi aprovado!");
-    } else {
-      print("Você foi reprovado. Tente novamente");
     }
   }
 
